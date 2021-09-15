@@ -12,15 +12,18 @@ If you have libraries of objects with carefully set up collision from Unreal pro
 - Put the script 'UE4CollisionImporter.gd' anywhere in your project folder.
 - Select the import settings for any file containing correctly set up meshes and set the "Custom Script" parameter by selecting the script.
 - Press the reimport button and the colliders set up in your file should be translated into Godot.
-NOTE: This script has yet to be exhaustively tested. There may be bugs, so if you find them, sorry for the inconvenience and please report them.
+
+**NOTE**: This script has yet to be exhaustively tested. There may be bugs, so if you find them, sorry for the inconvenience and please report them.
 
 The meshes in your scene should be named with the correct prefixes relative to the object they will be attached to and in a flat hierarchy. For example:
-Table
-UCX_Table_1
-UBX_Table_1
-UBX_Table_2
-UBX_Table_3
-UBX_Table_4
+
+&nbsp; **Table**<br>
+&nbsp; *UCX_Table_1<br>
+&nbsp; UBX_Table_1<br>
+&nbsp; UBX_Table_2<br>
+&nbsp; UBX_Table_3<br>
+&nbsp; UBX_Table_4*
+  
 'Table' is the model that will be visible in game, 'UCX_Table_1' is a convex collider that could allow the top to be cylindrical, hexagonal etc. and 'UBP_Table_1-4' could be the table legs. The benefit of setting up your meshes this way over using automatic convex decomposition tools in Godot is that you can explicitly define the exact collision as well as make use of the primitive shape colliders such as box and sphere that should be more efficient than convex colliders.
 
 For more information on Unreal's static mesh collision workflow, please check the [official documentation](https://docs.unrealengine.com/4.26/en-US/WorkingWithContent/Importing/FBX/StaticMeshes/#collision).
