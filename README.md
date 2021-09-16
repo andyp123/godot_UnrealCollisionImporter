@@ -24,6 +24,6 @@ The meshes in your scene should be named with the correct prefixes relative to t
 &nbsp; UBX_Table_3<br>
 &nbsp; UBX_Table_4*
   
-'Table' is the model that will be visible in game, 'UCX_Table_1' is a convex collider that could allow the top to be cylindrical, hexagonal etc. and 'UBP_Table_1-4' could be the table legs. The benefit of setting up your meshes this way over using automatic convex decomposition tools in Godot is that you can explicitly define the exact collision as well as make use of the primitive shape colliders such as box and sphere that should be more efficient than convex colliders.
+'Table' is the model that will be visible in game, 'UCX_Table_1' is a convex collider that could allow the top to be cylindrical, hexagonal etc. and 'UBX_Table_1-4' could be the table legs. The benefit of setting up your meshes this way over using automatic convex decomposition tools in Godot is that you can explicitly define the exact collision as well as make use of the primitive shape colliders such as box and sphere that should be more efficient than convex colliders.
 
 For more information on Unreal's static mesh collision workflow, please check the [official documentation](https://docs.unrealengine.com/4.26/en-US/WorkingWithContent/Importing/FBX/StaticMeshes/#collision).
