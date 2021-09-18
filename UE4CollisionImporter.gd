@@ -14,6 +14,17 @@ const SHAPE = {
 	CAPSULE = "UCP_"
 }
 
+
+func get_regex(object_name : String) -> RegEx:
+	var s: String = ""
+	for v in SHAPE.values():
+		s += "(" + v + ")*"
+	s += "_" + object_name + "_[0-9]"
+	var regex = RegEx.new()
+	regex.compile(s)
+	return regex
+
+
 func post_import(scene):
 	var objects = []
 	var colliders = []
@@ -34,10 +45,11 @@ func post_import(scene):
 
 	# Organise objects in the scene
 	for ob in objects:
-		var name : String = ob.name
-		print(name)
+		print(ob.name)
+		var regex = get_regex(ob.name)
 		for col in colliders:
-			if col.name.find(name, 4) != -1:
+			var result = regex.search(col.name)
+			if result:
 				print(" - ", col.name)
 				add_collider(scene, ob, col)
 
