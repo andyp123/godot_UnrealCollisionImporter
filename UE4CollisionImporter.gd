@@ -19,7 +19,7 @@ func get_regex(object_name : String) -> RegEx:
 	var s: String = ""
 	for v in SHAPE.values():
 		s += "(" + v + ")*"
-	s += "_" + object_name + "_[0-9]"
+	s += "_" + object_name + "(_{1}[0-9]{1,})?\\b"
 	var regex = RegEx.new()
 	regex.compile(s)
 	return regex
