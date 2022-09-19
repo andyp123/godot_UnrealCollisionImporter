@@ -65,13 +65,10 @@ func _post_import(scene):
 		var scene_path = "{path}/{name}.scn".format({'path': path, 'name': ob.name})
 		print(" -> ", scene_path)
 		ResourceSaver.save(packed, scene_path)
-		
-		# REMOVE ME!
-		break
 
 	# Delete all the collider nodes
-#	for col in colliders:
-#		col.queue_free()
+	for col in colliders:
+		col.queue_free()
 
 	# Scan for newly added files
 	var plugin = EditorPlugin.new()
